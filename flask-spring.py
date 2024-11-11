@@ -30,7 +30,7 @@ def index():
     else:
         mbti = 'ESFP'
 
-    url = "http://localhost:8081/SpringBoot1/mbti?id={}&choice={}&mbti={}".format(userid, choice, mbti)
+    url = "http://13.209.58.50:8081/SpringBoot1/mbti?id={}&choice={}&mbti={}".format(userid, choice, mbti)
     print(url)
     return redirect(url)
 
