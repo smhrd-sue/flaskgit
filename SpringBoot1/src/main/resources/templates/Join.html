@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1> Join Page </h1>
+
+<form action="join" method="post">
+	ID : <input type="text" name="id" id="inputId"> 
+	<button type="button" onclick="idCheck()"> 아이디 중복체크 </button> <br>
+	<p id="result"> </p>
+	PW : <input type="text" name="pw"> <br>
+	Name : <input type="text" name="name"> <br>
+	<input type="submit" value="회원가입">
+</form>
+
+<br>
+<button> <a href="mainPage"> 메인 </a> </button>
+<button> <a href="mailPage"> 메일 </a> </button>
+<button> <a href="blogPage"> 블로그 </a> </button>
+
+  <script>
+  	function idCheck(){
+  		
+  		// 사용자가 입력한 id 가져오기 
+  		const inputId = document.getElementById('inputId').value;
+  		console.log(inputId);
+  		
+  		const url = "idCheck";
+
+        fetch(url+"?id="+inputId)
+            .then((response) => response.text())
+            .then((text) => {
+                console.log(text);
+                document.getElementById('result').innerText = text;
+            });
+  	}
+        
+    </script>
+
+</body>
+</html>

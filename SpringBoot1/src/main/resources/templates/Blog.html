@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:if="${session.login_user != null}"> 
+	<span th:text="${session.login_user.id}"> </span> 님의 블로그 페이지
+</div>
+<div th:unless="${session.login_user != null}"> 
+	로그인하세요~
+</div>
+
+<button> <a href="mainPage"> 메인 </a> </button>
+
+</body>
+</html>
